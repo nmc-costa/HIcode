@@ -43,13 +43,19 @@ To start leveraging the power of HIcode for your data science and engineering pr
 
 4. **Contribute**: HIcode is an open-source project, and we welcome contributions from the community. Share your insights and improvements to enhance the codebase further.
 
+
 ## Join the Community
 
 Connect with fellow data science and engineering enthusiasts, and be part of the HIcode community. Share your experiences, ask questions, and stay up-to-date with the latest advancements in collaborative coding.
 
-- Join our [Discord Server](https://discord.gg/hicode) to engage in discussions and seek support.
+- Use issues [Discord Server](https://discord.gg/hicode) to engage in discussions and seek support.
 
-- Follow us on [Twitter](https://twitter.com/hicode) for exciting updates and announcements.
+- Make pull request [Twitter](https://twitter.com/hicode) for .
+
+
+## Custom HIcode services
+
+**Contact Services**: For custom HIcode in your business, contact me at <linkedin.com/in/nuno-m-c-da-costa-a14a4349>.
 
 ## License
 
