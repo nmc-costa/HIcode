@@ -1,14 +1,15 @@
 # HIcode guidelines (v1.0)
+
 <img src="./docs/Slide2.PNG">
 
-
+*TODO: add links to the example on repository*
 **Prototype (DS)**:
 
 *experiments folder (individual)*:
 The 1st stage of code (the lab). Use it for experimenting with anything you see fit. Put it in a way that can be tested by anyone. The idea is to simplify as much as you can so that you find functions that can be reused (reusable). In later iterations, it should have a similar architecture as the pipelines folder.
 
 *root (team)*:
-The 2nd stage after refining the experiments, reusable functions should be sent to the root/source scripts. The root is a team effort and should follow the Integration Wrike and GIT (“feature/ ProjectName-WrikeID-short-description”).
+The 2nd stage after refining the experiments, reusable functions should be sent to the root/source scripts. The root is a team effort.
 
 - **utils.py**: Contains generic functions/classes and initial coding rules that can be reused (e.g., paths, code column names, etc).
 - **preprocessing.py**: Includes all the functions/classes that are used to preprocess/prepare the datasets.
