@@ -43,7 +43,7 @@ To start leveraging the power of HIcode for your data science and engineering pr
 
 2. **Explore the Guidelines**: Familiarize yourself with the comprehensive [guidelines](https://github.com/nmc-costa/HIcode/blob/main/HIcode_guidelines.md) outlined in the repository, covering DRY, KISS, Consistency, and Testing principles.
 
-3. **Apply the Principles**: Incorporate HIcode methodologies into your project development process to optimize code quality and collaboration by leveraging the base example provide in this repo.
+3. **Apply the Principles**: Incorporate HIcode methodologies into your project development process to optimize code quality and collaboration by leveraging the base example provided in this repo.
 
 4. **Contribute**: HIcode is an open-source project, and we welcome contributions from the community. Share your insights and improvements to enhance the codebase further.
 
@@ -66,12 +66,14 @@ We value the support of our community in advancing collaborative data science an
 
 - **Contact Services**: For custom HIcode in your business, [linkedin](linkedin.com/in/nuno-m-c-da-costa-a14a4349).
 
-- **Patreon**: Show your commitment by becoming a patron on [Patreon](https://www.patreon.com/hicode). 
+<!--
+- **Patreon**: Show your commitment by becoming a patron on [Patreon](https://www.patreon.com/hicode). *TODO*
 
-- **Open Collective**: Contribute to HIcode's sustainability by sponsoring us on [Open Collective](https://opencollective.com/hicode). Your donations help us cover project-related expenses and support ongoing improvements.
+- **Open Collective**: Contribute to HIcode's sustainability by sponsoring us on [Open Collective](https://opencollective.com/hicode). Your donations help us cover project-related expenses and support ongoing improvements.*TODO*
 
-- **GitHub Sponsors**: Support the HIcode project through GitHub Sponsors and help us maintain its quality and accessibility. Visit our [GitHub Sponsors](https://github.com/sponsors/hicode) page to explore sponsorship options.
-
+- **GitHub Sponsors**: Support the HIcode project through GitHub Sponsors and help us maintain its quality and accessibility. Visit our [GitHub Sponsors](https://github.com/sponsors/hicode) page to explore sponsorship options. *TODO*
+)
+-->
 Your sponsorship not only assists in driving the development of HIcode but also ensures its availability as a free and open-source resource for the wider community. We are immensely grateful for your support!
 
 *Please note: HIcode is committed to transparency and accountability. All sponsorship funds are used responsibly to enhance the project and its associated community resources.*
