@@ -1,7 +1,11 @@
 # HIcode: Halfway Integration for Seamless Data Science and Engineering Collaboration
 HIcode is an impactful integration code base that harmonizes data science and engineering teams, fostering seamless collaboration. With HIcode, developers unlock the potential for a more robust and sustainable software system, maximizing project success and driving innovation. Embrace symplification! 🚀 #HIcode
 
-[![HIcode Logo](https://github.com/nmc-costa/HIcode/blob/main/docs/logo_1_small.png)](https://github.com/nmc-costa/HIcode)
+
+<p align="center">
+<img src="https://github.com/nmc-costa/HIcode/blob/main/docs/logo_1_small.png" width="200">
+</p>
+
 
 *Author: nmc-costa*
 
