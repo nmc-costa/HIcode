@@ -3,7 +3,7 @@ HIcode is an impactful integration code base that harmonizes data science and en
 
 
 <p align="center">
-<img src="https://github.com/nmc-costa/HIcode/blob/main/docs/logo_1_small.png" width="200">
+<img src="./docs/logo_1_small.PNG" width="200">
 </p>
 
 
