@@ -41,9 +41,9 @@ To start leveraging the power of HIcode for your data science and engineering pr
 
 1. **Clone the Repository**: Begin by cloning this repository to your local environment using `git clone https://github.com/nmc-costa/HIcode.git`.
 
-2. **Explore the Guidelines**: Familiarize yourself with the comprehensive guidelines outlined in the repository, covering DRY, KISS, Consistency, and Testing principles.
+2. **Explore the Guidelines**: Familiarize yourself with the comprehensive [guidelines](https://github.com/nmc-costa/HIcode/blob/main/HIcode_guidelines.md) outlined in the repository, covering DRY, KISS, Consistency, and Testing principles.
 
-3. **Apply the Principles**: Incorporate HIcode methodologies into your project development process to optimize code quality and collaboration.
+3. **Apply the Principles**: Incorporate HIcode methodologies into your project development process to optimize code quality and collaboration by leveraging the base example provide in this repo.
 
 4. **Contribute**: HIcode is an open-source project, and we welcome contributions from the community. Share your insights and improvements to enhance the codebase further.
 
