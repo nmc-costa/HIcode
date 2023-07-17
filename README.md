@@ -1,7 +1,7 @@
 # HIcode: Halfway Integration for Seamless Data Science and Engineering Collaboration
-HIcode is a breakthrough integration code base that harmonizes data science and engineering teams, fostering seamless collaboration. With HIcode, developers unlock the potential for a more robust and sustainable software system, maximizing project success and driving innovation. Embrace symplification! 🚀 #HIcode
+HIcode is an impactful integration code base that harmonizes data science and engineering teams, fostering seamless collaboration. With HIcode, developers unlock the potential for a more robust and sustainable software system, maximizing project success and driving innovation. Embrace symplification! 🚀 #HIcode
 
-[![HIcode Logo](https://github.com/nmc-costa/HIcode/blob/main/docs/logo_1.png)](https://github.com/nmc-costa/HIcode)
+[![HIcode Logo](https://github.com/nmc-costa/HIcode/blob/main/docs/logo_1_small.png)](https://github.com/nmc-costa/HIcode)
 
 *Author: nmc-costa*
 
@@ -35,7 +35,7 @@ HIcode is a cutting-edge integration code base designed to facilitate seamless c
 
 To start leveraging the power of HIcode for your data science and engineering projects, follow these simple steps:
 
-1. **Clone the Repository**: Begin by cloning this repository to your local environment using `git clone https://github.com/your_username/hicode.git`.
+1. **Clone the Repository**: Begin by cloning this repository to your local environment using `git clone https://github.com/nmc-costa/HIcode.git`.
 
 2. **Explore the Guidelines**: Familiarize yourself with the comprehensive guidelines outlined in the repository, covering DRY, KISS, Consistency, and Testing principles.
 
@@ -48,14 +48,29 @@ To start leveraging the power of HIcode for your data science and engineering pr
 
 Connect with fellow data science and engineering enthusiasts, and be part of the HIcode community. Share your experiences, ask questions, and stay up-to-date with the latest advancements in collaborative coding.
 
-- Use issues [Discord Server](https://discord.gg/hicode) to engage in discussions and seek support.
+- Use [issues](https://github.com/nmc-costa/HIcode/issues) to engage in discussions and seek support.
 
-- Make pull request [Twitter](https://twitter.com/hicode) for .
+- Make [pull requests](https://github.com/nmc-costa/HIcode/pulls) to share your insights and improvements to enhance the codebase further.
 
 
-## Custom HIcode services
 
-**Contact Services**: For custom HIcode in your business, contact me at <linkedin.com/in/nuno-m-c-da-costa-a14a4349>.
+## Sponsorship
+
+Currently being tested in large projects.
+
+We value the support of our community in advancing collaborative data science and engineering. If you believe in the mission of HIcode and would like to contribute to its development and maintenance, consider becoming a sponsor os contact us for custom services. Your support enables us to enhance the codebase, expand our resources, and provide ongoing support to the community.
+
+- **Contact Services**: For custom HIcode in your business, [linkedin](linkedin.com/in/nuno-m-c-da-costa-a14a4349).
+
+- **Patreon**: Show your commitment by becoming a patron on [Patreon](https://www.patreon.com/hicode). 
+
+- **Open Collective**: Contribute to HIcode's sustainability by sponsoring us on [Open Collective](https://opencollective.com/hicode). Your donations help us cover project-related expenses and support ongoing improvements.
+
+- **GitHub Sponsors**: Support the HIcode project through GitHub Sponsors and help us maintain its quality and accessibility. Visit our [GitHub Sponsors](https://github.com/sponsors/hicode) page to explore sponsorship options.
+
+Your sponsorship not only assists in driving the development of HIcode but also ensures its availability as a free and open-source resource for the wider community. We are immensely grateful for your support!
+
+*Please note: HIcode is committed to transparency and accountability. All sponsorship funds are used responsibly to enhance the project and its associated community resources.*
 
 ## License
 
@@ -63,4 +78,4 @@ HIcode is released under the [MIT License](https://opensource.org/licenses/MIT),
 
 Let's revolutionize data science and engineering collaboration with HIcode! Together, we build a stronger foundation for the future of software development. Happy coding!
 
-*Please note: The HIcode repository is actively maintained and frequently updated to incorporate emerging best practices and advancements. Be sure to check back regularly for the latest improvements.*
+*Please note: The HIcode repository is maintained and updated to incorporate emerging best practices and advancements. Be sure to check back for the latest improvements.*
