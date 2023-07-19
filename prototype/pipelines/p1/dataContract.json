@@ -1,0 +1,92 @@
+{
+    "time_name": [
+        {
+            "name": "timestamp",
+            "description":"Start dates refers to the date when the call started.",
+            "data_type": "Date",
+            "category_type": "timestamp",
+            "timestamp_format": "%Y-%m-%d",
+            "time_step": "1M",
+            "base_period": 12
+        }
+    ],
+
+    "target_variables": [
+        {
+            "name": "num1",
+            "description":"----",
+            "data_type": "float",
+            "limitation": {
+                "min": "-inf", "max": "inf"
+            }
+        },
+        {
+            "name": "num2",
+            "description":"---",
+            "data_type": "float",
+            "category_type": "time_varying_numeric",
+            "limitation": {
+                "min": "-inf", "max": "inf"
+            }
+        },
+        {
+            "name": "num3",
+            "description":"----",
+            "data_type": "float",
+            "category_type": "time_varying_numeric",
+            "limitation": {
+                "min": 0.0, "max": 731.0
+            }
+        },
+        {
+            "name": "num4",
+            "Description":"----",
+            "data_type": "float",
+            "category_type": "time_varying_numeric",
+            "limitation": {
+                "min": 0.0, "max": "inf"
+            }
+        },
+        {
+            "name": "num5",
+            "Description":"---",
+            "data_type": "float",
+            "category_type": "time_varying_numeric",
+            "limitation": {
+                "min": 0.0, "max": "inf"
+            }
+        },
+        {
+            "name": "num6",
+            "Description":"---",
+            "data_type": "float",
+            "category_type": "time_varying_numeric",
+            "limitation": {
+                "min": 0.0, "max": "inf"
+            }
+        },
+        {
+            "name": "num7",
+            "Description":"---",
+            "data_type": "float",
+            "category_type": "time_varying_numeric",
+            "limitation": {
+                "min": 0.0, "max": 1000
+            }
+        }
+    ],
+    "categorical_variables": [
+        {
+            "name": "cat1",
+            "description":"----",
+            "data_type": "str",
+            "category_type": "static_categorical",
+            "limitation": {
+                
+            }
+        }
+    ],
+
+    "excluded_variables": [
+    ]
+}

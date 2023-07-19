@@ -1,0 +1,11 @@
+{
+    "dataset_location":  "/mnt/e/drives/dtx/OneDrive - Universidade do Minho/projects/github/repos/HIcode/prototype/data_sample",
+    "dataset_name": "data.csv",
+    "output_results": "/mnt/e/drives/dtx/OneDrive - Universidade do Minho/projects/github/repos/HIcode/prototype/results",
+    "separator": ",",
+    "imputing_strategy": "mean",
+    "encoding": "label",
+    "threshold_nan_rows": 0.9,
+    "threshold_nan_cols": 0.9,
+    "scaling": "standard"
+}
