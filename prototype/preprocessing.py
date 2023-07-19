@@ -42,7 +42,8 @@ def read_dataset(data_contract, config, date_type_key="data_type"):
     target_vars = u.get_list_vars(data_contract, "target_variables")
 
     # Identify dataset
-    dataset = Path(config["dataset_location"] + config["dataset_name"])
+    dataset = Path(config["dataset_location"]) / Path(config["dataset_name"])
+    dataset = dataset.resolve() # resolve relative paths inside developer package
 
     # Read csv file into a dataframe specifying separator and dtypes for each column
     df = pd.read_csv(

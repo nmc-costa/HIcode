@@ -1,6 +1,7 @@
 """Utils Methods"""
 # system
 import os
+from pathlib import Path
 #
 import json
 
@@ -33,6 +34,15 @@ def get_fields_by_keyvalue(data, keyvalue=["data_type", "Date"], exclude_vars=[]
                 continue
     return result
 
+# Get a dict of date formats
+def get_date_formats(data, date_vars, exclude_vars):
+    result = {}
+    for key in data:
+        for field in data[key]:
+            if (field["name"] in date_vars) and (field["name"] not in exclude_vars):
+                result.update({field["name"]: field["timestamp_format"]})
+
+    return result
 
 # create a list with the name of variables
 def get_list_vars(data, list_name):
@@ -49,7 +59,8 @@ def get_list_vars(data, list_name):
 def save_csv(df, folder_path, name):
     # extract .csv from the file name
     file_name = name.split(".")[0] + "_preprocessed" + ".csv"
-
+    folder_path = Path(folder_path).resolve() # resolve relative paths inside developer package
+    
     # Check if the folder exists and create it if it doesn't
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
