@@ -1,5 +1,5 @@
 # HIcode: Halfway Integration for Seamless Code Management and Collaboration
-HIcode is an impactful integration code base that harmonizes data teams, fostering seamless collaboration. With HIcode, developers unlock the potential for a more robust and sustainable software system, maximizing project success and driving innovation. Embrace symplification! 🚀 #HIcode
+HIcode is an impactful integration code base that harmonizes data teams, fostering seamless collaboration. With HIcode, developers unlock the potential for a more robust, sustainable and agnostic software system, maximizing project success and driving innovation. Embrace symplification! 🚀 #HIcode
 
 
 <p align="center">
@@ -11,7 +11,7 @@ HIcode is an impactful integration code base that harmonizes data teams, fosteri
 
 ## Overview
 
-HIcode is an impactful integration code base designed to facilitate seamless code management and collaboration within and between teams (e.g., data science and data engineering teams). This repository serves as a comprehensive guide for developers, outlining methodologies that simplify the process of adhering to essential principles: **DRY (Don't Repeat Yourself)**, **KISS (Keep It Simple)**, **Consistency**, and **Testing**. Emphasizing best practices, the HIcode guideline aims to elevate code quality, readability, maintainability, and scalability within data science and engineering projects. The ultimate goal is to cultivate a more robust and sustainable software system that fosters productive co-working and maximizes project success.
+HIcode is an impactful integration code base designed to facilitate seamless code management and collaboration within and between teams (e.g., data science and data engineering teams). This repository serves as a comprehensive guide for developers, outlining methodologies that simplify the process of adhering to essential principles: **DRY (Don't Repeat Yourself)**, **KISS (Keep It Simple)**, **Consistency**, and **Testing**. Emphasizing best practices, the HIcode guideline aims to elevate code quality, readability, maintainability, and scalability within data science and engineering projects. The ultimate goal is to cultivate a more robust and sustainable agnostic software system that fosters productive co-working and maximizes project success.
 
 ## Key Features
 
@@ -24,6 +24,9 @@ HIcode is an impactful integration code base designed to facilitate seamless cod
 - **Consistency**: HIcode enforces consistent coding practices across the entire project, enhancing readability and making maintenance a breeze.
 
 - **Testing**: The HIcode code base structure enables robust testing methodologies, ensuring that code functions as expected and minimizing the potential for regressions.
+
+- **Agnostic**: HIcode structure with configurable pipelines enables a high level of data and sofware agnosticity, enabling developers to work on projects of any size and complexity with different packages.
+
 
 ## Benefits
 
