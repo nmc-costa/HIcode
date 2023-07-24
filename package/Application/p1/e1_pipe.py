@@ -4,11 +4,11 @@ from sklearn.pipeline import Pipeline
 
 
 # package imports
-import prototype.utils as u
-import prototype.preprocessing as pp
+import package.utils.utils as u
+import package.preprocessing.preprocessing as pp
 
 # config imports
-from .cfg_transform_pipe import TransformPipe
+from cfg_transform_pipe import TransformPipe
 
 """Pipeline functions"""
 
