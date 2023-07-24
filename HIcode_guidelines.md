@@ -6,10 +6,10 @@
 **Prototype (DS)**:
 
 [*experiments folder (individual)*](https://github.com/nmc-costa/HIcode/tree/main/prototype/experiments):
-The 1st stage of code (the lab). Use it for experimenting with anything you see fit. Put it in a way that can be tested by anyone. The idea is to simplify as much as you can so that you find functions that can be reused (reusable). In later iterations, it should have a similar architecture as the pipelines folder.
+The **1st stage** of code (*the lab*). Use it for experimenting with anything you see fit. Put it in a way that can be tested by anyone. The idea is to simplify as much as you can so that you find functions that can be reused (reusable). In later iterations, it should have a similar architecture as the pipelines folder.
 
-[*root (team)*](https://github.com/nmc-costa/HIcode/tree/main/prototype):
-The 2nd stage after refining the experiments, reusable functions should be sent to the root/source scripts. The root is a team effort.
+[*root/source (team)*](https://github.com/nmc-costa/HIcode/tree/main/prototype):
+The **2nd stage** after refining the experiments, reusable functions should be sent to the root/source scripts. The root is a team effort.
 
 - [**utils.py**](https://github.com/nmc-costa/HIcode/blob/main/prototype/utils.py): Contains generic functions/classes and initial coding rules that can be reused (e.g., paths, code column names, etc).
 - [**preprocessing.py**](https://github.com/nmc-costa/HIcode/blob/main/prototype/preprocessing.py): Includes all the functions/classes that are used to preprocess/prepare the datasets.
@@ -18,20 +18,20 @@ The 2nd stage after refining the experiments, reusable functions should be sent 
 - **monitor.py**: Contains all the functions/classes for monitoring the models.
 
 [*pipelines folder (team)*](https://github.com/nmc-costa/HIcode/tree/main/prototype/pipelines):
-The 3rd stage, it should be used to create full pipelines with config files, the git already has 2 examples. It will be used for doing a pipeline for autoencoders, for monitoring, etc. Each pipeline should demonstrate the functionality of major features that have sub-features.
+The **3rd stage**, the center of HIcode method, it should be used to create full pipelines with config files. The git already has 1 example of transforming experiment [**e1**](https://github.com/nmc-costa/HIcode/tree/main/prototype/experiments/e1) into pipeline [**p1**](https://github.com/nmc-costa/HIcode/tree/main/prototype/pipelines/p1). It can be used for mutiple purposes, like preprocessing, model, train, monitoring, and other. Each pipeline should demonstrate the functionality of major features that import sub-features.
 
 [*tutorial notebook (team)*](https://github.com/nmc-costa/HIcode/blob/main/prototype/tutorial.ipynb):
-The last stage, for us to show the complete functionalities of the package in the most simplified way, in this, we can call the pipelines and show the most important results.
+**Last stage** to show the complete functionalities of the package in the most simplified way, in this, we can call the pipelines and show the most important results.
 
 [*data_sample folder*](https://github.com/nmc-costa/HIcode/tree/main/prototype/data_sample):
-An original sample of data that is being used to test all the prototypes.
+A sample of data that is being used to test all the pipelines.
 
 **Package (DE)**:
 
 [*application folder (team)*](https://github.com/nmc-costa/HIcode/tree/main/package/Application):
-1st stage import pipelines as applications and use the prototype as the library.
+**1st stage**, import pipelines as applications and use the prototype as the library.
 
-*Final stage*:
+**Final stage**:
 Copy and paste prototype root/source scripts inside the package and change relative imports to finalize the package.
 
 
