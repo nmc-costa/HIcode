@@ -38,7 +38,7 @@ def load(data_contract, config):
 
 def transform(df, config, cols_cat, cols_num, cols_target):
     # Transform Pipeline
-    transform_pipe = tpipe.TransformPipe(config, cols_cat, cols_num, cols_target)
+    transform_pipe = TransformPipe(config, cols_cat, cols_num, cols_target)
     preprocessing_pipeline = Pipeline(transform_pipe.pipe_list)
     df_t = preprocessing_pipeline.fit_transform(df)
 
