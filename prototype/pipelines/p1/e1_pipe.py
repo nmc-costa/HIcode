@@ -23,7 +23,14 @@ def configurations(data_path, config_path):
 
 def load(data_contract, config):
     # Load dataset
-    df, cols_cat, cols_num, cols_target = pp.read_dataset(data_contract, config)
+
+    dataset_path = Path(config["dataset_location"]) / Path(config["dataset_name"])
+    # resolve relative paths inside developer package
+    dataset_path = dataset_path.resolve()
+    # Read the dataset
+    df, cols_cat, cols_num, cols_target = pp.read_dataset(
+        data_contract, dataset_path=dataset_path, separator=config["separator"]
+    )
 
     return df, cols_cat, cols_num, cols_target
 
