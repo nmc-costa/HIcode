@@ -17,7 +17,7 @@ The **2nd stage** after refining the experiments, reusable functions should be s
 - **train.py**: Comprises all the functions/classes for training routines.
 - **monitor.py**: Contains all the functions/classes for monitoring the models.
 
-**NOTE:** In the root scripts we should not pass as an argument config dictionary from cfg_init_vars.json, only parameters. This means for example in preprocessing.py instead of def function(config), use def function(parameter) and in the pipe.py call preprocessing.function(config["parameter"]).
+**NOTE:** In the root scripts we should not pass as an argument config dictionary from cfg_init_vars.json, only parameters. This means for example in preprocessing.py instead of def function(config), use def function(parameter) and in the pipe.py call preprocessing.function(config["parameter"]). This helps maintaing the code clean and easy to read.
 
 [*pipelines folder (team)*](https://github.com/nmc-costa/HIcode/tree/main/prototype/pipelines):
 The **3rd stage**, the center of HIcode method, it should be used to create full pipelines with config files. The git already has 1 example of transforming experiment [**e1**](https://github.com/nmc-costa/HIcode/tree/main/prototype/experiments/e1) into pipeline [**p1**](https://github.com/nmc-costa/HIcode/tree/main/prototype/pipelines/p1). It can be used for mutiple purposes, like preprocessing, model, train, monitoring, and other. Each pipeline should demonstrate the functionality of major features that import sub-features.

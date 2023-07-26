@@ -11,8 +11,10 @@ import prototype.utils as u
 
 
 # READ/LOAD DATASET
-## read the dataset according dataContract and config definitions
-def read_dataset(data_contract, config, date_type_key="data_type"):
+## read the dataset according dataContract
+def read_dataset(
+    data_contract, dataset_path="", separator=",", date_type_key="data_type"
+):
     # Identify datatypes and excluded variables
     exclude_vars = u.get_list_vars(data_contract, "excluded_variables")
     str_vars = u.get_fields_by_keyvalue(
@@ -41,14 +43,10 @@ def read_dataset(data_contract, config, date_type_key="data_type"):
     date_formats = u.get_date_formats(data_contract, date_vars, exclude_vars)
     target_vars = u.get_list_vars(data_contract, "target_variables")
 
-    # Identify dataset
-    dataset = Path(config["dataset_location"]) / Path(config["dataset_name"])
-    dataset = dataset.resolve() # resolve relative paths inside developer package
-
     # Read csv file into a dataframe specifying separator and dtypes for each column
     df = pd.read_csv(
-        dataset,
-        sep=config["separator"],
+        dataset_path,
+        sep=separator,
         usecols=lambda x: x not in exclude_vars,
     )
 
@@ -60,14 +58,13 @@ def read_dataset(data_contract, config, date_type_key="data_type"):
     return df, cat_vars, num_vars, target_vars
 
 
-
-
 """
 data Preprocessing
 """
 
 
 # TRANSFORMATIONS
+
 
 ## Clean wrong characters in numerical columns and teransform them to numeric
 class ConvertDataTypes(BaseEstimator, TransformerMixin):
