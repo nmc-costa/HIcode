@@ -12,7 +12,7 @@ The **1st stage** of code (*the lab*). Use it for experimenting with anything yo
 The **2nd stage** after refining the experiments, reusable functions should be sent to the root/source scripts. The root is a team effort.
 
 - [**utils.py**](https://github.com/nmc-costa/HIcode/blob/main/prototype/utils.py): Contains generic functions/classes and initial coding rules that can be reused (e.g., paths, code column names, etc).
-- [**preprocessing.py**](https://github.com/nmc-costa/HIcode/blob/main/prototype/preprocessing.py): Includes all the functions/classes that are used to preprocess/prepare the datasets.
+- [**preprocessing.py**](https://github.com/nmc-costa/HIcode/blob/main/prototype/preprocessing.py): Includes all the functions/classes that are used to preprocess/prepare the datasets. **NOTE:** Make an effort to create classes of transform (like sikitlearn - check the example provided) so you can maintain the code agnostic and configurable.
 - **model.py**: Encompasses all the functions/classes that are needed to create a model and support model visualizations, etc. (reusable functions).
 - **train.py**: Comprises all the functions/classes for training routines.
 - **monitor.py**: Contains all the functions/classes for monitoring the models.
