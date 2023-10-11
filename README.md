@@ -11,32 +11,7 @@ HIcode is an impactful integration code base that harmonizes data teams, fosteri
 
 ## Overview
 
-HIcode is an impactful integration code base designed to facilitate seamless code management and collaboration within and between teams (e.g., data science and data engineering teams). This repository serves as a comprehensive guide for developers, outlining methodologies that simplify the process of adhering to essential principles: **DRY (Don't Repeat Yourself)**, **KISS (Keep It Simple)**, **Consistency**, and **Testing**. Emphasizing best practices, the HIcode guideline aims to elevate code quality, readability, maintainability, and scalability within data science and engineering projects. The ultimate goal is to cultivate a more robust and sustainable agnostic software system that fosters productive co-working and maximizes project success.
-
-## Key Features
-
-- **Empowering Collaboration**: HIcode bridges the gap between data teams (science and engineering), promoting seamless communication and enabling teams to work harmoniously towards common goals.
-
-- **DRY (Don't Repeat Yourself)**: By promoting code reuse and minimizing duplication, HIcode ensures a streamlined development process, reducing the risk of inconsistencies and errors.
-
-- **KISS (Keep It Simple)**: Simplicity is key to maintainability and understanding. HIcode encourages developers to follow a straightforward approach in crafting elegant solutions.
-
-- **Consistency**: HIcode enforces consistent coding practices across the entire project, enhancing readability and making maintenance a breeze.
-
-- **Testing**: The HIcode code base structure enables robust testing methodologies, ensuring that code functions as expected and minimizing the potential for regressions.
-
-- **Agnostic**: HIcode structure with configurable pipelines enables a high level of data and sofware agnosticity, enabling developers to work on projects of any size and complexity with different packages.
-
-
-## Benefits
-
-- **Improved Code Quality**: HIcode encourages developers to adhere to best practices, resulting in cleaner, more efficient, and reliable code.
-
-- **Enhanced Readability**: Consistent coding standards and documentation make the codebase easily understandable for all team members, facilitating knowledge transfer.
-
-- **Greater Maintainability**: With DRY and KISS principles at its core, HIcode simplifies future changes and updates, reducing maintenance efforts.
-
-- **Scalability**: HIcode is designed to handle project growth and complexity effectively, adapting to evolving requirements and scaling without complications.
+HIcode is an impactful integration code base designed to facilitate seamless code management and collaboration within and between teams (e.g., data science and data engineering teams). This repository serves as a comprehensive guide for python developers, outlining methodologies that simplify the process of adhering to essential principles: **DRY (Don't Repeat Yourself)**, **KISS (Keep It Simple)**, **Consistency**, and **Testing**. Emphasizing best practices, the HIcode guideline aims to elevate code quality, readability, maintainability, and scalability within data science and engineering projects. The ultimate goal is to cultivate a more robust and sustainable agnostic software system that fosters productive co-working and maximizes project success.
 
 ## Get Started
 
@@ -49,6 +24,33 @@ To start leveraging the power of HIcode for your data science and engineering pr
 3. **Apply the Principles**: Incorporate HIcode methodologies into your project development process to optimize code quality and collaboration by leveraging the base example provided in this repo.
 
 4. **Contribute**: HIcode is an open-source project, and we welcome contributions from the community. Share your insights and improvements to enhance the codebase further.
+
+## Key Features
+
+- **Empowering Collaboration**: HIcode bridges the gap between data teams (science and engineering), promoting seamless communication and enabling teams to work harmoniously towards common goals. Exemplification: by using python `def` to define the nomenclature (e.g., def load()) of subpipelines.  
+
+- **DRY (Don't Repeat Yourself)**: By promoting code reuse and minimizing duplication, HIcode ensures a streamlined development process, reducing the risk of inconsistencies and errors. 
+
+- **KISS (Keep It Simple)**: Simplicity is key to maintainability and understanding. HIcode encourages developers to follow a straightforward approach in crafting elegant solutions. Examplification: by using [scikitlearn.Pipeline()](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html) to sequentially apply a list of transforms, creating classes of `fit` `transform` methods.
+
+- **Consistency**: HIcode enforces consistent coding practices across the entire project, enhancing readability and making maintenance a breeze.
+
+- **Testing**: The HIcode code base structure enables robust testing methodologies, ensuring that code functions as expected and minimizing the potential for regressions. Examplification: by using a pipeline structure, each pipeline is tested and validated.
+
+- **Agnostic**: HIcode structure with configurable pipelines enables a high level of data and sofware agnosticity, enabling developers to work on projects of any size and complexity with different packages. Exemplification: by using [scikitlearn.Pipeline()](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html) and metadata configurations.
+
+
+
+## Benefits
+
+- **Improved Code Quality**: HIcode encourages developers to adhere to best practices, resulting in cleaner, more efficient, and reliable code.
+
+- **Enhanced Readability**: Consistent coding standards and documentation make the codebase easily understandable for all team members, facilitating knowledge transfer.
+
+- **Greater Maintainability**: With DRY and KISS principles at its core, HIcode simplifies future changes and updates, reducing maintenance efforts.
+
+- **Scalability**: HIcode is designed to handle project growth and complexity effectively, adapting to evolving requirements and scaling without complications.
+
 
 
 ## Join the Community
