@@ -4,13 +4,13 @@ from sklearn.pipeline import Pipeline
 import pandas as pd
 
 
-# prototype imports
-import prototype.utils as u
-import prototype.datasets as d
-import prototype.models as m
+# package imports
+import package.utils.utils as u
+import package.datasets.datasets as d
+import package.models.models as m
 
 # config imports
-from prototype.pipelines.p1.cfg_transform_pipe import TransformPipe
+from package.preprocessing.cfg_transform_pipe import TransformPipe
 
 """Pipeline functions"""
 
@@ -110,4 +110,6 @@ if __name__ == "__main__":
     cwd = Path(
         os.path.dirname(os.path.abspath(__file__))
     )  # Get the current working directory
-    pipeline(cwd / "cfg_pipeline.json", cwd / "cfg_dataset.json", save=False)
+    pipeline(
+        cwd / "cfg_pipeline.json", cwd / "../../datasets/cfg_dataset.json", save=False
+    )
