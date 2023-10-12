@@ -3,7 +3,7 @@
 <img src="./docs/Slide2.PNG">
 
 
-**Prototype (DS)**:
+[**Prototype (DS)**](https://github.com/nmc-costa/HIcode/tree/main/prototype):
 
 [*experiments folder (individual)*](https://github.com/nmc-costa/HIcode/tree/main/prototype/experiments):
 The **1st stage** of code (*the lab*). Use it for experimenting with anything you see fit. Put it in a way that can be tested by anyone. The idea is to simplify as much as you can so that you find functions that can be reused (reusable). In later iterations, it should have a similar architecture as the pipelines folder.
@@ -28,12 +28,9 @@ The **3rd stage**, the center of HIcode method, it should be used to create full
 [*data_sample folder*](https://github.com/nmc-costa/HIcode/tree/main/prototype/data_sample):
 A sample of data that is being used to test all the pipelines.
 
-**Package (DE)**:
-
-[*application folder (team)*](https://github.com/nmc-costa/HIcode/tree/main/package/Application):
-
-**Final stage**:
-- Import prototype pipelines as applications
-- Copy and paste prototype root/source scripts to specific folders inside the package and change relative imports to finalize the package.
+[**Package (DE)**](https://github.com/nmc-costa/HIcode/tree/main/package):
+*Final stage*:
+- Import prototype pipelines as [applications](https://github.com/nmc-costa/HIcode/tree/main/package/applications)
+- Copy and paste prototype root/source scripts to respective folders inside the package and change relative imports to finalize the package.
 
 
