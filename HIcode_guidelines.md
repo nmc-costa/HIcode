@@ -25,7 +25,7 @@ The **3rd stage**, the center of HIcode method, it should be used to create full
 [*tutorial notebook (team)*](https://github.com/nmc-costa/HIcode/blob/main/prototype/tutorial.ipynb):
 **Last stage** to show the complete functionalities of the package in the most simplified way, in this, we can call the pipelines and show the most important results.
 
-[*data_sample folder*](https://github.com/nmc-costa/HIcode/tree/main/prototype/data_sample):
+[*data_sample folder*](https://github.com/nmc-costa/HIcode/tree/main/data_sample):
 A sample of data that is being used to test all the pipelines.
 
 [**Package (DE)**](https://github.com/nmc-costa/HIcode/tree/main/package):
