@@ -1,0 +1,8 @@
+## INSTALL (comment/uncomment) ***
+#%conda create -n mobai python=3 jupyterlab -y
+#%conda install matplotlib Ipython pandas scikit-learn -y
+#NOTE: add env kernel: 1.Go to terminal; 2. conda activate env; 3. python -m ipykernel install --user --name PROJECT --display-name "PROJECT"
+
+
+#!cd MOBAI 
+#!pip install -e . #NOTE: install inside of environment mobai ; # WARNING:It is highly recommended to use pip install . (regular install) and pip install -e . (developer install) to install packages, as invoking setup.py directly will do the wrong things for many dependencies, such as pull prereleases and incompatible package versions, or make the package hard to uninstall with pip.
