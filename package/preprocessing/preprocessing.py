@@ -5,57 +5,7 @@ from pathlib import Path
 # math
 import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
-
-# package imports
-import prototype.utils as u
-
-
-# READ/LOAD DATASET
-## read the dataset according dataContract
-def read_dataset(
-    data_contract, dataset_path="", separator=",", date_type_key="data_type"
-):
-    # Identify datatypes and excluded variables
-    exclude_vars = u.get_list_vars(data_contract, "excluded_variables")
-    str_vars = u.get_fields_by_keyvalue(
-        data_contract,
-        keyvalue=[date_type_key, "str"],
-        exclude_vars=exclude_vars,
-    )
-    int_vars = u.get_fields_by_keyvalue(
-        data_contract,
-        keyvalue=[date_type_key, "int"],
-        exclude_vars=exclude_vars,
-    )
-    float_vars = u.get_fields_by_keyvalue(
-        data_contract,
-        keyvalue=[date_type_key, "float"],
-        exclude_vars=exclude_vars,
-    )
-    cat_vars = u.get_list_vars(data_contract, "categorical_variables")
-    cat_vars += [value for value in str_vars if value not in cat_vars]
-    num_vars = int_vars + float_vars
-    date_vars = u.get_fields_by_keyvalue(
-        data_contract,
-        keyvalue=[date_type_key, "Date"],
-        exclude_vars=exclude_vars,
-    )
-    date_formats = u.get_date_formats(data_contract, date_vars, exclude_vars)
-    target_vars = u.get_list_vars(data_contract, "target_variables")
-
-    # Read csv file into a dataframe specifying separator and dtypes for each column
-    df = pd.read_csv(
-        dataset_path,
-        sep=separator,
-        usecols=lambda x: x not in exclude_vars,
-    )
-
-    # Parse the date columns using pd.to_datetime() with format parameter
-    # NOTE: doing after read_csv due to deprepactions from pandas v 2.0.0 date_vars and date_formats can be used in pd.read_csv
-    for column, date_format in date_formats.items():
-        df[column] = pd.to_datetime(df[column], format=date_format)
-
-    return df, cat_vars, num_vars, target_vars
+from sklearn.impute import SimpleImputer
 
 
 """
@@ -98,3 +48,19 @@ class DropDuplicates(BaseEstimator, TransformerMixin):
 
     def transform(self, X):
         return X.drop_duplicates(keep=self.keep)
+
+
+## Impute missing values (mean, median, most frequent)
+class DataImputing(BaseEstimator, TransformerMixin):
+    def __init__(self, strategy="mean", impute_cols=None):
+        self.strategy = strategy
+        self.impute_cols = impute_cols
+
+    def fit(self, X, y=None):
+        self.imputer = SimpleImputer(strategy=self.strategy)
+        self.imputer.fit(X[self.impute_cols])
+        return self
+
+    def transform(self, X):
+        X[self.impute_cols] = self.imputer.transform(X[self.impute_cols])
+        return X
