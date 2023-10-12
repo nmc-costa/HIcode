@@ -12,10 +12,10 @@ The **1st stage** of code (*the lab*). Use it for experimenting with anything yo
 The **2nd stage** after refining the experiments, reusable functions should be sent to the root/source scripts. The root is a team effort.
 
 - [**utils.py**](https://github.com/nmc-costa/HIcode/blob/main/prototype/utils.py): Contains generic functions/classes and initial coding rules that can be reused (e.g., paths, code column names, etc).
+- [**datasets.py**](https://github.com/nmc-costa/HIcode/blob/main/prototype/datasets.py): Contains datasets functions/classes to read the dataset and configurations (e.g.,  read config, read dataset, etc).
 - [**preprocessing.py**](https://github.com/nmc-costa/HIcode/blob/main/prototype/preprocessing.py): Includes all the functions/classes that are used to preprocess/prepare the datasets. **NOTE:** Make an effort to create classes of transform (like sikitlearn - check the example provided) so you can maintain the code agnostic and configurable.
-- **model.py**: Encompasses all the functions/classes that are needed to create a model and support model visualizations, etc. (reusable functions).
+- [**models.py**](https://github.com/nmc-costa/HIcode/blob/main/prototype/models.py): Encompasses all the functions/classes that are needed to create models. (reusable functions).
 - **train.py**: Comprises all the functions/classes for training routines.
-- **monitor.py**: Contains all the functions/classes for monitoring the models.
 
 **NOTE:** In the root scripts we should not pass as an argument config dictionary from cfg_init_vars.json, only parameters. This means for example in preprocessing.py instead of def function(config), use def function(parameter) and in the pipe.py call preprocessing.function(config["parameter"]). This helps maintaing the code clean and easy to read.
 
@@ -31,9 +31,9 @@ A sample of data that is being used to test all the pipelines.
 **Package (DE)**:
 
 [*application folder (team)*](https://github.com/nmc-costa/HIcode/tree/main/package/Application):
-**1st stage**, import pipelines as applications and use the prototype as the library.
 
 **Final stage**:
-Copy and paste prototype root/source scripts inside the package and change relative imports to finalize the package.
+- Import prototype pipelines as applications
+- Copy and paste prototype root/source scripts to specific folders inside the package and change relative imports to finalize the package.
 
 
