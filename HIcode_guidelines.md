@@ -29,6 +29,7 @@ The **3rd stage**, the center of HIcode method, it should be used to create full
 A sample of data that is being used to test all the pipelines.
 
 [**Package (DE)**](https://github.com/nmc-costa/HIcode/tree/main/package):
+
 *Final stage*:
 - Import prototype pipelines as [applications](https://github.com/nmc-costa/HIcode/tree/main/package/applications)
 - Copy and paste prototype root/source scripts to respective folders inside the package and change relative imports to finalize the package.
