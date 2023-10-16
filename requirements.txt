@@ -1,8 +1,26 @@
-## INSTALL (comment/uncomment) ***
+# 1. Conda Setup (line by line) [RECOMMENDED] *********************
+
+# Please copy and paste the the following code in a jupyter notebook,
+# or follow the tutorial.ipynb in the prototype folder
+
+
+## INSTALL (uncomment) ***
+### Create environment:
 #%conda create -n hicode python=3 jupyterlab -y
 #%conda install matplotlib Ipython pandas scikit-learn -y
-#NOTE: add env kernel: 1.Go to terminal; 2. conda activate env; 3. python -m ipykernel install --user --name hicode --display-name "hicode"
 
-
+### Install Hicode repository as a developer package (after git clone): 
+#!pip install -e path/to/hicode/setup.py 
+#or:  
 #!cd hicode
-#!pip install -e . #NOTE: install inside of environment hicode ; # WARNING:It is highly recommended to use pip install . (regular install) and pip install -e . (developer install) to install packages, as invoking setup.py directly will do the wrong things for many dependencies, such as pull prereleases and incompatible package versions, or make the package hard to uninstall with pip.
+#!pip install -e .
+
+# WARNING: pip install Hicode repository inside of created environment hicode;
+# WARNING: It is highly recommended to use "pip install -e path/to/hicode/setup.py"  (developer install) to install packages, as invoking setup.py directly will do the wrong things for many dependencies, such as pull prereleases and incompatible package versions, or make the package hard to uninstall with pip.
+
+### NOTE(optional), add environment kernel path (this helps notebook IDEs to detect environment): 
+#1.Go to terminal; 2. conda activate env; 3. python -m ipykernel install --user --name hicode --display-name "hicode"
+
+### NOTE(optional), check if environment is already installed: 
+#%conda list
+

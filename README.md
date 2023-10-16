@@ -17,13 +17,15 @@ HIcode is an impactful integration code base designed to facilitate seamless cod
 
 To start leveraging the power of HIcode for your data science and engineering projects, follow these simple steps:
 
-1. **Clone the Repository**: Begin by cloning this repository to your local environment using `git clone https://github.com/nmc-costa/HIcode.git`.
+1. **Clone the Repository**: Begin by cloning this repository to your local environment using `git clone https://github.com/nmc-costa/HIcode.git`. 
 
-2. **Explore the Guidelines**: Familiarize yourself with the comprehensive [guidelines](https://github.com/nmc-costa/HIcode/blob/main/HIcode_guidelines.md) outlined in the repository, covering DRY, KISS, Consistency, and Testing principles.
+2. **Setup the Repository**: Follow the [tutorial.ipynb](https://github.com/nmc-costa/HIcode/blob/main/prototype/tutorial.ipynb) to setup and validate the conda environment.
 
-3. **Apply the Principles**: Incorporate HIcode methodologies into your project development process to optimize code quality and collaboration by leveraging the base example provided in this repo.
+3. **Explore the Guidelines**: Familiarize yourself with the comprehensive [guidelines](https://github.com/nmc-costa/HIcode/blob/main/HIcode_guidelines.md) outlined in the repository, covering DRY, KISS, Consistency, and Testing principles.
 
-4. **Contribute**: HIcode is an open-source project, and we welcome contributions from the community. Share your insights and improvements to enhance the codebase further.
+4. **Apply the Principles**: Incorporate HIcode methodologies into your project development process to optimize code quality and collaboration by leveraging the base example provided in this repo.
+
+5. **Contribute**: HIcode is an open-source project, and we welcome contributions from the community. Share your insights and improvements to enhance the codebase further.
 
 ## Key Features
 

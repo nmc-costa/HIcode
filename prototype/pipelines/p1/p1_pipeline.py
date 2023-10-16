@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+from IPython.display import display
 from sklearn.pipeline import Pipeline
 import pandas as pd
 
@@ -42,6 +43,7 @@ def transform(df, config, cols_cat, cols_num, cols_target):
     transform_pipe = TransformPipe(config, cols_cat, cols_num, cols_target)
     preprocessing_pipeline = Pipeline(transform_pipe.pipe_list)
     df_t = preprocessing_pipeline.fit_transform(df)
+    display(df_t)
 
     return df_t
 
@@ -58,6 +60,7 @@ def train(X, y, model, model_name):
     model.fit(X, y)
     y_pred = model.predict(X)
     results = pd.DataFrame({"y": y, "y_pred": y_pred, "model_name": model_name})
+    results.plot()
     return results
 
 
@@ -94,16 +97,17 @@ def pipeline(config_path, data_path, save=False):
     model_d = models()
     X = df_t[cols_target[1:]].to_numpy()
     y = df_t[cols_target[0]].to_numpy()
+    results_d = {}
     for model_name, model in model_d.items():
         print(f"Training {model_name}")
         results = train(X, y, model, model_name)
-        results.plot()
+        results_d[model_name] = results
 
     # Save results
     if save:
         u.save_csv(df_t, config["output_results"], config["dataset_name"])
 
-    return df_t
+    return df_t, results_d
 
 
 if __name__ == "__main__":
