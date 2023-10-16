@@ -1,4 +1,4 @@
-# Pipeline: example of transforming experiments.e1.ipynb into an HIcode pipeline 
+# Pipeline: example of transforming experiments.e1.ipynb into an HIcode pipeline application
 
 This Python project implements a pipeline for data ingestion. The pipeline comprises the following files:
 * Pipeline metadata: cfg_pipeline.json
@@ -7,10 +7,13 @@ This Python project implements a pipeline for data ingestion. The pipeline compr
 * Python scripts: p1_pipeline.py, preprocessing.py, datasets.py, utils.py
 * Python notebook: p1_run.ipynb
 
-## Preprocessing data
-The following classes are available for preprocessing data and are configured in 'cfg_transform_pipe.py':
-* ConvertDataTypes: Convert data types and correct corrupted characters in numerical fields
-* DropDuplicate: Drop duplicated rows
+## Pipeline:
+- Configurations
+- Load dataset
+- Transform dataset
+- Train models
+- Save results
+
 
 ## Run the application
 
