@@ -1,5 +1,5 @@
 # HIcode: Halfway Integration for Seamless Code Management and Collaboration
-HIcode is an impactful integration code base that harmonizes data teams, fostering seamless collaboration. With HIcode, developers unlock the potential for a more robust, sustainable and agnostic software system, maximizing project success and driving innovation. Embrace symplification! 🚀 #HIcode
+HIcode is an impactful integration code base structure that harmonizes data teams, fostering seamless collaboration. With HIcode, developers unlock the potential for a more robust, sustainable and agnostic software system, maximizing project success and driving innovation. Embrace symplification! 🚀 #HIcode
 
 
 <p align="center">
