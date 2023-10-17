@@ -21,7 +21,7 @@ def configurations(data_path, config_path):
     config_dataset = d.read_config(data_path)  # Read the data contract Json file
     config_pipeline = d.read_config(config_path)  # Read the configuration Json file
 
-    return config_dataset, config_pipeline  # Return
+    return config_dataset, config_pipeline
 
 
 def load(config_dataset, config_pipeline):
@@ -53,10 +53,7 @@ def transform(df, config_pipeline, cols_cat, cols_num, cols_target):
 
 
 def models():
-    model_d = {
-        "Linear Regression": m.LinRegression(),
-        "Ridge Regression (0.5)": m.RidgeRegression(0.5),
-    }
+    model_d = {"Linear Regression": m.LinRegression()}
     return model_d
 
 

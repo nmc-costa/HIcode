@@ -53,10 +53,7 @@ def transform(df, config_pipeline, cols_cat, cols_num, cols_target):
 
 
 def models():
-    model_d = {
-        "Linear Regression": m.LinRegression(),
-        "Ridge Regression (0.5)": m.RidgeRegression(0.5),
-    }
+    model_d = {"Linear Regression": m.LinRegression()}
     return model_d
 
 

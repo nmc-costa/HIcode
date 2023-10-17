@@ -15,18 +15,3 @@ class LinRegression:
     def predict(self, x):
         x = x.reshape((x.shape[0], -1))
         return self.model.predict(x)
-
-
-class RidgeRegression:
-    def __init__(self, alpha=0.5):
-        self.alpha = alpha
-        self.model = Ridge(alpha=self.alpha)
-
-    def fit(self, x, y):
-        x = x.reshape((x.shape[0], -1))
-        self.__init__(self.alpha)
-        self.model.fit(x, y)
-
-    def predict(self, x):
-        x = x.reshape((x.shape[0], -1))
-        return self.model.predict(x)
