@@ -11,7 +11,7 @@ HIcode is an impactful integration code base that harmonizes data teams, fosteri
 
 ## Overview
 
-HIcode is an impactful integration code base designed to facilitate seamless code management and collaboration within and between teams (e.g., data science and data engineering teams). This repository serves as a comprehensive guide for python developers, outlining methodologies that simplify the process of adhering to essential principles: **DRY (Don't Repeat Yourself)**, **KISS (Keep It Simple)**, **Consistency**, and **Testing**. Emphasizing best practices, the HIcode guideline aims to elevate code quality, readability, maintainability, and scalability within data science and engineering projects. The ultimate goal is to cultivate a more robust and sustainable agnostic software system that fosters productive co-working and maximizes project success.
+HIcode is an impactful code base structure designed to facilitate seamless code management and collaboration within and between teams (e.g., data science and data engineering teams). This repository serves as a comprehensive guide for python developers, outlining methodologies that simplify the process of adhering to essential principles: **DRY (Don't Repeat Yourself)**, **KISS (Keep It Simple)**, **Consistency**, and **Testing**. Emphasizing best practices, the HIcode guideline aims to elevate code quality, readability, maintainability, and scalability within data science and engineering projects. The ultimate goal is to cultivate a more robust and sustainable agnostic software system that fosters productive co-working and maximizes project success.
 
 ## Get Started
 
@@ -35,7 +35,7 @@ To start leveraging the power of HIcode for your data science and engineering pr
 
 - **KISS (Keep It Simple)**: Simplicity is key to maintainability and understanding. HIcode encourages developers to follow a straightforward approach in crafting elegant solutions. Examplification: by using [scikitlearn.Pipeline()](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html) to sequentially apply a list of transforms, creating classes of `fit` `transform` methods.
 
-- **Consistency**: HIcode enforces consistent coding practices across the entire project, enhancing readability and making maintenance a breeze.
+- **Consistency**: HIcode enforces consistent coding practices across the entire project, enhancing readability and making maintenance a breeze. Exemplification: by reusing the same pipeline structure throughout the project, we maintain consistent coding practices across the project.
 
 - **Testing**: The HIcode code base structure enables robust testing methodologies, ensuring that code functions as expected and minimizing the potential for regressions. Examplification: by using a pipeline structure, each pipeline is tested and validated.
 
