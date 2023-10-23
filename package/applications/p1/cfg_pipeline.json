@@ -1,6 +1,6 @@
 {
-    "dataset_location":  "/mnt/e/drives/dtx/OneDrive - Universidade do Minho/projects/github/repos/HIcode/data_sample",
+    "dataset_location":  "../../../data_sample",
     "dataset_name": "data.csv",
-    "output_results": "/mnt/e/drives/dtx/OneDrive - Universidade do Minho/projects/github/repos/HIcode/prototype/results",
+    "output_results": "../../../results",
     "separator": ","
 }

@@ -26,12 +26,11 @@ def configurations(data_path, config_path):
 
 def load(config_dataset, config_pipeline):
     # Load dataset
-
-    dataset_path = Path(config_pipeline["dataset_location"]) / Path(
-        config_pipeline["dataset_name"]
-    )
-    # resolve relative paths inside developer package (WARNING: on notebook should change the workspace)
-    dataset_path = dataset_path.resolve()
+    dataset_path = (
+        Path(os.path.dirname(os.path.abspath(__file__)))
+        / Path(config_pipeline["dataset_location"])
+        / Path(config_pipeline["dataset_name"])
+    )  # solve absolute and relative paths (warning: relative path should be considered from this __file__)
     # Read the dataset
     df, cols_cat, cols_num, cols_target = d.read_dataset(
         config_dataset,
