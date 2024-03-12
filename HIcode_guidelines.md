@@ -1,4 +1,4 @@
-# HIcode guidelines (v2.0)
+# HIcode guidelines (v3.0)
 
 <img src="./docs/Slide2.PNG">
 
