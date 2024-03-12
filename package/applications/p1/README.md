@@ -3,9 +3,9 @@
 This Python project implements a pipeline for data ingestion. The pipeline comprises the following files:
 * Pipeline metadata: cfg_pipeline.json
 * Dataset metadata: cfg_dataset.json
-* Transformations metadata: cfg_transform_pipe.py
+* Transformations metadata: cfg_preprocessing_pipe.py
 * Python scripts: p1_pipeline.py, preprocessing.py, datasets.py, utils.py
-* Python notebook: p1_run.ipynb
+* Python notebook: p1_results.ipynb
 
 ## Pipeline:
 - Configurations
@@ -21,5 +21,5 @@ After defining the configuration parameters in the 'cfg_dataset', 'cfg_pipeline'
 ````python
     pipeline(
             'cfg_pipeline.json',
-            'cfg_dataset.json',
+            '../../datasets/cfg_dataset.json',
         )

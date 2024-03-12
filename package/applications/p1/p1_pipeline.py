@@ -10,58 +10,74 @@ import package.utils.utils as u
 import package.datasets.datasets as d
 import package.models.models as m
 
-# config imports
-from package.preprocessing.cfg_transform_pipe import TransformPipe
+# package config imports
+from package.preprocessing.cfg_preprocessing_pipe import PreprocessingPipe
+
+# package pipeline_functions imports
+import package.applications.pipeline_functions as pipe
 
 """Pipeline functions"""
 
 
 def configurations(data_path, config_path):
     # Configurations
-    config_dataset = d.read_config(data_path)  # Read the data contract Json file
-    config_pipeline = d.read_config(config_path)  # Read the configuration Json file
+    config_dataset, config_pipeline = pipe.configurations(data_path, config_path)
 
-    return config_dataset, config_pipeline  # Return
+    return config_dataset, config_pipeline
 
 
-def load(config_dataset, config_pipeline):
-    # Load dataset
-    dataset_path = (
-        Path(os.path.dirname(os.path.abspath(__file__)))
-        / Path(config_pipeline["dataset_location"])
-        / Path(config_pipeline["dataset_name"])
-    )  # solve absolute and relative paths (warning: relative path should be considered from this __file__)
-    # Read the dataset
-    df, cols_cat, cols_num, cols_target = d.read_dataset(
-        config_dataset,
-        dataset_path=dataset_path,
-        separator=config_pipeline["separator"],
-    )
+def load(config_dataset, config_pipeline, check=False):
+    print("\nload dataset:\n")
+    df, cols_cat, cols_num, cols_target = pipe.load(config_dataset, config_pipeline)
+
+    # check dataframe
+    if check:
+        pipe.check_dataframe(df)
 
     return df, cols_cat, cols_num, cols_target
 
 
-def transform(df, config_pipeline, cols_cat, cols_num, cols_target):
-    # Transform Pipeline
-    transform_pipe = TransformPipe(config_pipeline, cols_cat, cols_num, cols_target)
-    preprocessing_pipeline = Pipeline(transform_pipe.pipe_list)
-    df_t = preprocessing_pipeline.fit_transform(df)
-    display(df_t)
+def preprocessing(df, preprocessing_pipe, check=False):
+    print("\npreprocessed dataset:\n")
+    results = None
+    # NOTE: custom pipeline: if we want to change the default pipeline steps, we can do it here - remove or add steps to the pipeline list
+    # NOTE: test this by removing steps
+    pipe_list = [
+        ("convert_data_types", preprocessing_pipe.convert_data_types),
+        ("drop_duplicates", preprocessing_pipe.drop_duplicates),
+        ("imputing_num", preprocessing_pipe.data_imputing_num),
+    ]
+    preprocessing_pipe.pipeline = Pipeline(pipe_list)  # update default pipeline
+    results = pipe.preprocessing(df, preprocessing_pipe)
 
-    return df_t
+    if check:
+        pipe.check_dataframe(results)
+
+    return results
 
 
-def models():
-    model_d = {"Linear Regression": m.LinRegression()}
+def models(check=False):
+    print("\nselected models:\n")
+    model_d = pipe.models()  # default dict
+    # NOTE: custom dict: if we want to change the default models, we can do it here - remove or add models to the model_d dictionary
+    model_d = {
+        "Linear Regression": m.LinRegression(),
+        "Linear Regression 2": m.LinRegression(),
+    }
+
+    if check:
+        display(model_d)
     return model_d
 
 
-def train(X, y, model, model_name):
-    model.fit(X, y)
-    y_pred = model.predict(X)
-    results = pd.DataFrame({"y": y, "y_pred": y_pred, "model_name": model_name})
-    results.plot()
-    return results
+def multi_train(X, y, model_d, check=False):
+    print("\ntrain multi models:\n")
+    results_d = pipe.multi_train(X, y, model_d, check=check)
+
+    if check:
+        pass
+
+    return results_d
 
 
 """Helper functions"""
@@ -70,52 +86,48 @@ def train(X, y, model, model_name):
 """Pipeline"""
 
 
-def pipeline(config_path, data_path, save=False):
+def pipeline(config_path, data_path, save=False, check=False):
     """
     - Configurations
     - Load dataset
     - Transform dataset
-    - Train models
+    - Train/test models
     - Save results
     """
     # Configurations
     config_dataset, config_pipeline = configurations(data_path, config_path)
 
     # Load dataset
-    df, cols_cat, cols_num, cols_target = load(config_dataset, config_pipeline)
+    df, cols_cat, cols_num, cols_target = load(config_dataset, config_pipeline, check=check)
 
     # Transform dataset
-    df_t = transform(
+    preprocessing_pipe = PreprocessingPipe(config_pipeline, cols_cat, cols_num, cols_target)
+    df_t = preprocessing(
         df,
-        config_pipeline,
-        cols_cat,
-        cols_num,
-        cols_target,
+        preprocessing_pipe,
+        check=check,
     )  # Read the dataset and preprocess it
 
-    # Train models
-    model_d = models()
+    # Train/test models
+    """
+    # NOTE: Like preprocessing.py the train.py file should be a collection of classes that are used to train the model.
+    # NOTE: DO THE FOLLOWING EXERCISE TO CHECK WHAT YOU LEARNED: 
+    # # 1. pass the next code to a class in the train.py file like in the preprocessing.py file 
+    # # 2. create cfg_train_pipe.py like cfg_preprocessing_pipe.py
+    # # 3. update a train() and multi_train() functions in pipeline_functions.py file 
+    """
+    model_d = models(check=check)
     X = df_t[cols_target[1:]].to_numpy()
     y = df_t[cols_target[0]].to_numpy()
-    results_d = {}
-    for model_name, model in model_d.items():
-        print(f"Training {model_name}")
-        results = train(X, y, model, model_name)
-        results_d[model_name] = results
+    results_d = multi_train(X, y, model_d, check=check)
 
     # Save results
     if save:
-        u.save_csv(
-            df_t, config_pipeline["output_results"], config_pipeline["dataset_name"]
-        )
+        u.save_csv(df_t, config_pipeline["output_results"], config_pipeline["dataset_name"])
 
     return df_t, results_d
 
 
 if __name__ == "__main__":
-    cwd = Path(
-        os.path.dirname(os.path.abspath(__file__))
-    )  # Get the current working directory
-    pipeline(
-        cwd / "cfg_pipeline.json", cwd / "../../datasets/cfg_dataset.json", save=False
-    )
+    cwd = Path(os.path.dirname(os.path.abspath(__file__)))  # Get the current working directory
+    pipeline(cwd / "cfg_pipeline.json", cwd / "../../datasets/cfg_dataset.json", check=True)
