@@ -39,7 +39,7 @@ def load(config_dataset, config_pipeline):
     return df, cols_cat, cols_num, cols_target
 
 
-def preprocessing(df, config_pipeline, preprocessing_pipe, cols_cat, cols_num, cols_target):
+def preprocessing(df, preprocessing_pipe):
     # Transform Pipeline
     df_t = preprocessing_pipe.pipeline.fit_transform(df)
     # display(df_t)
@@ -52,12 +52,26 @@ def models():  # default model is Linear Regression
     return model_d
 
 
-def train(X, y, model, model_name):
+def train(X, y, model, model_name, check=False):
     model.fit(X, y)
     y_pred = model.predict(X)
     results = pd.DataFrame({"y": y, "y_pred": y_pred, "model_name": model_name})
-    results.plot()
+
+    if check:
+        print(f"\nFit/predict:  {model_name}")
+        check_dataframe(results)
+        results.plot()
+
     return results
+
+
+def multi_train(X, y, model_d, check=False):
+    results_d = {}
+    for model_name, model in model_d.items():
+        results = train(X, y, model, model_name, check=check)
+        results_d[model_name] = results
+
+    return results_d
 
 
 """Helper functions"""
@@ -67,55 +81,53 @@ def check_dataframe(df, method="pandas"):
     if method == "pandas":
         display(df.head(5))
         print("shape: ", df.shape)
-    elif method == "pyspark":
-        pass
 
     return
 
 
-"""Pipeline"""
+"""Pipeline (Benchmark test)
+This should laways give the same results (for the same dataset and configuration files)
+"""
 
 
-def pipeline(config_path, data_path, save=False):
+def pipeline(config_path, data_path):
     """
     - Configurations
     - Load dataset
     - Transform dataset
     - Train models
-    - Save results
     """
     # Configurations
     config_dataset, config_pipeline = configurations(data_path, config_path)
 
     # Load dataset
     df, cols_cat, cols_num, cols_target = load(config_dataset, config_pipeline)
+    print("\nload dataset:\n")
+    check_dataframe(df)
 
     # Transform dataset
-    df_t = transform(
+    preprocessing_pipe = PreprocessingPipe(config_pipeline, cols_cat, cols_num, cols_target)
+    df_t = preprocessing(
         df,
-        config_pipeline,
-        cols_cat,
-        cols_num,
-        cols_target,
+        preprocessing_pipe,
     )  # Read the dataset and preprocess it
+    print("\npreprocessed dataset:\n")
+    check_dataframe(df_t)
 
     # Train models
     model_d = models()
+    print("\nselected models:\n")
+    display(model_d)
+
     X = df_t[cols_target[1:]].to_numpy()
     y = df_t[cols_target[0]].to_numpy()
-    results_d = {}
-    for model_name, model in model_d.items():
-        print(f"Training {model_name}")
-        results = train(X, y, model, model_name)
-        results_d[model_name] = results
-
-    # Save results
-    if save:
-        u.save_csv(df_t, config_pipeline["output_results"], config_pipeline["dataset_name"])
+    results_d = multi_train(X, y, model_d)
+    print("\ntrain models results_d:\n")
+    display(results_d)
 
     return df_t, results_d
 
 
 if __name__ == "__main__":
     cwd = Path(os.path.dirname(os.path.abspath(__file__)))  # Get the current working directory
-    pipeline(cwd / "cfg_pipeline.json", cwd / "cfg_dataset.json", save=False)
+    pipeline(cwd / "cfg_pipeline.json", cwd / "../cfg_dataset.json")

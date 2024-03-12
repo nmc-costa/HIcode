@@ -5,10 +5,13 @@ from sklearn.pipeline import Pipeline
 import pandas as pd
 
 
-# prototype imports
+# package imports
 import prototype.utils as u
 import prototype.datasets as d
 import prototype.models as m
+
+# package config imports
+from prototype.cfg_preprocessing_pipe import PreprocessingPipe
 
 # package pipeline_functions imports
 import prototype.pipelines.pipeline_functions as pipe
@@ -25,8 +28,8 @@ def configurations(data_path, config_path):
 
 def load(config_dataset, config_pipeline, check=False):
     print("\nload dataset:\n")
-    # Read the dataset
     df, cols_cat, cols_num, cols_target = pipe.load(config_dataset, config_pipeline)
+
     # check dataframe
     if check:
         pipe.check_dataframe(df)
@@ -34,17 +37,19 @@ def load(config_dataset, config_pipeline, check=False):
     return df, cols_cat, cols_num, cols_target
 
 
-def preprocessing(df, config_pipeline, preprocessing_pipe, cols_cat, cols_num, cols_target, check=False):
+def preprocessing(df, preprocessing_pipe, check=False):
     print("\npreprocessed dataset:\n")
     results = None
-    # custom pipeline: (if we want to change the default pipeline steps, we can do it here - remove or add steps to the pipeline list)
+    # NOTE: custom pipeline: if we want to change the default pipeline steps, we can do it here - remove or add steps to the pipeline list
+    # NOTE: test this by removing steps
     pipe_list = [
         ("convert_data_types", preprocessing_pipe.convert_data_types),
         ("drop_duplicates", preprocessing_pipe.drop_duplicates),
         ("imputing_num", preprocessing_pipe.data_imputing_num),
     ]
     preprocessing_pipe.pipeline = Pipeline(pipe_list)  # update default pipeline
-    results = pipe.preprocessing(df, config_pipeline, preprocessing_pipe, cols_cat, cols_num, cols_target)
+    results = pipe.preprocessing(df, preprocessing_pipe)
+
     if check:
         pipe.check_dataframe(results)
 
@@ -54,28 +59,25 @@ def preprocessing(df, config_pipeline, preprocessing_pipe, cols_cat, cols_num, c
 def models(check=False):
     print("\nselected models:\n")
     model_d = pipe.models()  # default dict
+    # NOTE: custom dict: if we want to change the default models, we can do it here - remove or add models to the model_d dictionary
     model_d = {
         "Linear Regression": m.LinRegression(),
         "Linear Regression 2": m.LinRegression(),
-    }  # custom dict
+    }
 
     if check:
         display(model_d)
     return model_d
 
 
-def train(X, y, model, model_name):
-    results = None
-    # custom pipeline:
-    pipe_list = [
-        ("remove_nan_columns", preprocessing_pipe.remove_nan_columns),
-        ("scale_data", preprocessing_pipe.scale_data),
-        ("tranform_inputs", preprocessing_pipe.tranform_inputs),
-        ("split_data", preprocessing_pipe.split_data),
-        ("train_test_models", preprocessing_pipe.train_test_models),
-    ]
-    preprocessing_pipe.preprocessing_pipeline = Pipeline(pipe_list)
-    return results
+def multi_train(X, y, model_d, check=False):
+    print("\ntrain multi models:\n")
+    results_d = pipe.multi_train(X, y, model_d, check=check)
+
+    if check:
+        pass
+
+    return results_d
 
 
 """Helper functions"""
@@ -84,40 +86,40 @@ def train(X, y, model, model_name):
 """Pipeline"""
 
 
-def pipeline(config_path, data_path, save=False):
+def pipeline(config_path, data_path, save=False, check=False):
     """
     - Configurations
     - Load dataset
     - Transform dataset
-    - Train models
+    - Train/test models
     - Save results
     """
     # Configurations
     config_dataset, config_pipeline = configurations(data_path, config_path)
 
     # Load dataset
-    df, cols_cat, cols_num, cols_target = load(config_dataset, config_pipeline)
+    df, cols_cat, cols_num, cols_target = load(config_dataset, config_pipeline, check=check)
 
     # Transform dataset
     preprocessing_pipe = PreprocessingPipe(config_pipeline, cols_cat, cols_num, cols_target)
     df_t = preprocessing(
         df,
-        config_pipeline,
         preprocessing_pipe,
-        cols_cat,
-        cols_num,
-        cols_target,
+        check=check,
     )  # Read the dataset and preprocess it
 
-    # Train models
-    model_d = models()
+    # Train/test models
+    """
+    # NOTE: Like preprocessing.py the train.py file should be a collection of classes that are used to train the model.
+    # NOTE: DO THE FOLLOWING EXERCISE TO CHECK WHAT YOU LEARNED: 
+    # # 1. pass the next code to a class in the train.py file like in the preprocessing.py file 
+    # # 2. create cfg_train_pipe.py like cfg_preprocessing_pipe.py
+    # # 3. update a train() and multi_train() functions in pipeline_functions.py file 
+    """
+    model_d = models(check=check)
     X = df_t[cols_target[1:]].to_numpy()
     y = df_t[cols_target[0]].to_numpy()
-    results_d = {}
-    for model_name, model in model_d.items():
-        print(f"Training {model_name}")
-        results = train(X, y, model, model_name)
-        results_d[model_name] = results
+    results_d = multi_train(X, y, model_d, check=check)
 
     # Save results
     if save:
@@ -128,4 +130,4 @@ def pipeline(config_path, data_path, save=False):
 
 if __name__ == "__main__":
     cwd = Path(os.path.dirname(os.path.abspath(__file__)))  # Get the current working directory
-    pipeline(cwd / "cfg_pipeline.json", cwd / "cfg_dataset.json", save=False)
+    pipeline(cwd / "cfg_pipeline.json", cwd / "../../cfg_dataset.json", check=True)
