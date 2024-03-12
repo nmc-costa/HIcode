@@ -10,57 +10,71 @@ import prototype.utils as u
 import prototype.datasets as d
 import prototype.models as m
 
-# config imports
-from prototype.pipelines.p1.cfg_transform_pipe import TransformPipe
+# package pipeline_functions imports
+import prototype.pipelines.pipeline_functions as pipe
 
 """Pipeline functions"""
 
 
 def configurations(data_path, config_path):
     # Configurations
-    config_dataset = d.read_config(data_path)  # Read the data contract Json file
-    config_pipeline = d.read_config(config_path)  # Read the configuration Json file
+    config_dataset, config_pipeline = pipe.configurations(data_path, config_path)
 
     return config_dataset, config_pipeline
 
 
-def load(config_dataset, config_pipeline):
-    # Load dataset
-    dataset_path = (
-        Path(os.path.dirname(os.path.abspath(__file__)))
-        / Path(config_pipeline["dataset_location"])
-        / Path(config_pipeline["dataset_name"])
-    )  # solve absolute and relative paths (warning: relative path should be considered from this __file__)
+def load(config_dataset, config_pipeline, check=False):
+    print("\nload dataset:\n")
     # Read the dataset
-    df, cols_cat, cols_num, cols_target = d.read_dataset(
-        config_dataset,
-        dataset_path=dataset_path,
-        separator=config_pipeline["separator"],
-    )
+    df, cols_cat, cols_num, cols_target = pipe.load(config_dataset, config_pipeline)
+    # check dataframe
+    if check:
+        pipe.check_dataframe(df)
 
     return df, cols_cat, cols_num, cols_target
 
 
-def transform(df, config_pipeline, cols_cat, cols_num, cols_target):
-    # Transform Pipeline
-    transform_pipe = TransformPipe(config_pipeline, cols_cat, cols_num, cols_target)
-    preprocessing_pipeline = Pipeline(transform_pipe.pipe_list)
-    df_t = preprocessing_pipeline.fit_transform(df)
-    display(df_t)
+def preprocessing(df, config_pipeline, preprocessing_pipe, cols_cat, cols_num, cols_target, check=False):
+    print("\npreprocessed dataset:\n")
+    results = None
+    # custom pipeline: (if we want to change the default pipeline steps, we can do it here - remove or add steps to the pipeline list)
+    pipe_list = [
+        ("convert_data_types", preprocessing_pipe.convert_data_types),
+        ("drop_duplicates", preprocessing_pipe.drop_duplicates),
+        ("imputing_num", preprocessing_pipe.data_imputing_num),
+    ]
+    preprocessing_pipe.pipeline = Pipeline(pipe_list)  # update default pipeline
+    results = pipe.preprocessing(df, config_pipeline, preprocessing_pipe, cols_cat, cols_num, cols_target)
+    if check:
+        pipe.check_dataframe(results)
 
-    return df_t
+    return results
 
 
-def models():
-    model_d = {"Linear Regression": m.LinRegression()}
+def models(check=False):
+    print("\nselected models:\n")
+    model_d = pipe.models()  # default dict
+    model_d = {
+        "Linear Regression": m.LinRegression(),
+        "Linear Regression 2": m.LinRegression(),
+    }  # custom dict
+
+    if check:
+        display(model_d)
     return model_d
 
 
 def train(X, y, model, model_name):
-    model.fit(X, y)
-    y_pred = model.predict(X)
-    results = pd.DataFrame({"y": y, "y_pred": y_pred, "model_name": model_name})
-    results.plot()
+    results = None
+    # custom pipeline:
+    pipe_list = [
+        ("remove_nan_columns", preprocessing_pipe.remove_nan_columns),
+        ("scale_data", preprocessing_pipe.scale_data),
+        ("tranform_inputs", preprocessing_pipe.tranform_inputs),
+        ("split_data", preprocessing_pipe.split_data),
+        ("train_test_models", preprocessing_pipe.train_test_models),
+    ]
+    preprocessing_pipe.preprocessing_pipeline = Pipeline(pipe_list)
     return results
 
 
@@ -85,9 +99,11 @@ def pipeline(config_path, data_path, save=False):
     df, cols_cat, cols_num, cols_target = load(config_dataset, config_pipeline)
 
     # Transform dataset
-    df_t = transform(
+    preprocessing_pipe = PreprocessingPipe(config_pipeline, cols_cat, cols_num, cols_target)
+    df_t = preprocessing(
         df,
         config_pipeline,
+        preprocessing_pipe,
         cols_cat,
         cols_num,
         cols_target,
@@ -105,15 +121,11 @@ def pipeline(config_path, data_path, save=False):
 
     # Save results
     if save:
-        u.save_csv(
-            df_t, config_pipeline["output_results"], config_pipeline["dataset_name"]
-        )
+        u.save_csv(df_t, config_pipeline["output_results"], config_pipeline["dataset_name"])
 
     return df_t, results_d
 
 
 if __name__ == "__main__":
-    cwd = Path(
-        os.path.dirname(os.path.abspath(__file__))
-    )  # Get the current working directory
+    cwd = Path(os.path.dirname(os.path.abspath(__file__)))  # Get the current working directory
     pipeline(cwd / "cfg_pipeline.json", cwd / "cfg_dataset.json", save=False)
