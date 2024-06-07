@@ -1,7 +1,7 @@
 from sklearn.pipeline import Pipeline
 
 # prototype imports
-import prototype.preprocessing as pp
+import package.preprocessing.preprocessing as pp
 
 
 class PreprocessingPipe:
