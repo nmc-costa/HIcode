@@ -37,8 +37,9 @@ def load(config_dataset, config_pipeline, check=False):
     return df, cols_cat, cols_num, cols_target
 
 
-def preprocessing(df, preprocessing_pipe, check=False):
+def preprocessing(df, config_pipeline, cols_cat, cols_num, cols_target, check=False):
     print("\npreprocessed dataset:\n")
+    preprocessing_pipe = PreprocessingPipe(config_pipeline, cols_cat, cols_num, cols_target)
     results = None
     # NOTE: custom pipeline: if we want to change the default pipeline steps, we can do it here - remove or add steps to the pipeline list
     # NOTE: test this by removing steps
@@ -90,7 +91,7 @@ def pipeline(config_path, data_path, save=False, check=False):
     """
     - Configurations
     - Load dataset
-    - Transform dataset
+    - Preprocess dataset
     - Train/test models
     - Save results
     """
@@ -100,11 +101,13 @@ def pipeline(config_path, data_path, save=False, check=False):
     # Load dataset
     df, cols_cat, cols_num, cols_target = load(config_dataset, config_pipeline, check=check)
 
-    # Transform dataset
-    preprocessing_pipe = PreprocessingPipe(config_pipeline, cols_cat, cols_num, cols_target)
+    # Preprocess dataset
     df_t = preprocessing(
         df,
-        preprocessing_pipe,
+        config_pipeline,
+        cols_cat,
+        cols_num,
+        cols_target,
         check=check,
     )  # Read the dataset and preprocess it
 
