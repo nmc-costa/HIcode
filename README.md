@@ -21,7 +21,7 @@ To start leveraging the power of HIcode for your data science and engineering pr
 
 2. **Setup the Repository**: Follow the [tutorial.ipynb](https://github.com/nmc-costa/HIcode/blob/main/prototype/tutorial.ipynb) to setup and validate the conda environment.
 
-3. **Explore the Guidelines**: Familiarize yourself with the comprehensive [guidelines](https://github.com/nmc-costa/HIcode/blob/main/HIcode_guidelines.md) outlined in the repository, covering DRY, KISS, Consistency, and Testing principles.
+3. **Explore the Guidelines**: Familiarize yourself with the comprehensive [guidelines](https://github.com/nmc-costa/HIcode/blob/main/HIcode_guidelines.md) outlined in the repository, covering DRY, KISS, Consistency, and Testing principles. Then, look into the [pipeline architecture](https://github.com/nmc-costa/HIcode/blob/main/HIcode_architecture.md) example.
 
 4. **Apply the Principles**: Incorporate HIcode methodologies into your project development process to optimize code quality and collaboration by leveraging the base example provided in this repo.
 
