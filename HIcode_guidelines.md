@@ -32,7 +32,7 @@ A sample of data that is being used to test all the pipelines.
 [**Package (DE)**](https://github.com/nmc-costa/HIcode/tree/main/package):
 
 *Final stage*:
-- Import prototype pipelines as [applications](https://github.com/nmc-costa/HIcode/tree/main/package/applications)
+- Import prototype pipelines as [pipelines](https://github.com/nmc-costa/HIcode/tree/main/package/pipelines) on [package](https://github.com/nmc-costa/HIcode/tree/main/package)
 - Copy and paste prototype root/source scripts to respective folders inside the package and change relative imports to finalize the package.
 - Check the [pipeline architecture](https://github.com/nmc-costa/HIcode/blob/main/HIcode_architecture.md) example.
 

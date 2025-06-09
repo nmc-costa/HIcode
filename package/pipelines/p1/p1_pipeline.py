@@ -14,7 +14,7 @@ import package.models.models as m
 from package.preprocessing.cfg_preprocessing_pipe import PreprocessingPipe
 
 # package pipeline_functions imports
-import package.applications.pipeline_functions as pipe
+import package.pipelines.pipeline_functions as pipe
 
 """Pipeline functions"""
 
