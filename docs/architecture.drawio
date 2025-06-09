@@ -1,0 +1,196 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0" version="27.1.4">
+  <diagram name="architrecture_diagram" id="HQ712C9doR03rhy1S5jf">
+    <mxGraphModel dx="2430" dy="2640" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-1" value="" style="group" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="390" y="450" width="2090" height="1680" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-2" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;Current Architecture&amp;nbsp;&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-1">
+          <mxGeometry x="770" width="350" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-3" value="&lt;font style=&quot;background-color: rgb(255, 255, 255); font-size: 36px;&quot;&gt;&lt;span style=&quot;font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Team code base management architecture:&amp;nbsp;&lt;/span&gt;&lt;a style=&quot;box-sizing: border-box; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;&quot; href=&quot;https://github.com/nmc-costa/HIcode&quot;&gt;HIcode: Halfway Integration for Seamless Code Management and Collaboration&lt;/a&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-1">
+          <mxGeometry y="130" width="2090" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-4" value="" style="group" vertex="1" connectable="0" parent="vaZw7ZPf9e5VCLAtTvDp-1">
+          <mxGeometry x="140" y="260" width="1720" height="1420" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-5" value="package" style="shape=folder;fontStyle=1;tabWidth=70;tabHeight=20;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;recursiveResize=0;strokeWidth=7;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-4">
+          <mxGeometry x="930" y="40" width="790" height="640" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-6" value="preprocesing" style="shape=folder;fontStyle=1;tabWidth=90;tabHeight=20;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;recursiveResize=0;strokeWidth=5;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-5">
+          <mxGeometry x="580" y="67" width="180" height="163" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-7" value="&lt;ul&gt;&lt;li&gt;config_transform_pipe.py&lt;/li&gt;&lt;li&gt;transform.py&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-6">
+          <mxGeometry x="-20" y="13" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-8" value="postprocessing" style="shape=folder;fontStyle=1;tabWidth=100;tabHeight=20;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;recursiveResize=0;strokeWidth=5;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-5">
+          <mxGeometry x="306" y="450" width="180" height="161" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-9" value="&lt;ul&gt;&lt;li&gt;reports.py&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-8">
+          <mxGeometry x="-15" y="22" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-10" value="datasets" style="shape=folder;fontStyle=1;tabWidth=100;tabHeight=20;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;recursiveResize=0;strokeWidth=5;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-5">
+          <mxGeometry x="305" y="67" width="180" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-11" value="&lt;ul&gt;&lt;li&gt;config_dataset.json&lt;/li&gt;&lt;li&gt;datasets.py&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-10">
+          <mxGeometry x="-16" y="13" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-12" value="metrics" style="shape=folder;fontStyle=1;tabWidth=90;tabHeight=20;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;recursiveResize=0;strokeWidth=5;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-5">
+          <mxGeometry x="305" y="252" width="181" height="151" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-13" value="&lt;ul&gt;&lt;li&gt;config_metrics_pipe.py&lt;/li&gt;&lt;li&gt;metrics.py&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-12">
+          <mxGeometry x="-19" y="8" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-14" value="utilities" style="shape=folder;fontStyle=1;tabWidth=90;tabHeight=20;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;recursiveResize=0;strokeWidth=5;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-5">
+          <mxGeometry x="580" y="252" width="180" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-15" value="&lt;ul&gt;&lt;li&gt;utils.py&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-14">
+          <mxGeometry x="-16" y="22" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-16" value="pipelines" style="shape=folder;fontStyle=1;tabWidth=90;tabHeight=20;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;recursiveResize=0;strokeWidth=5;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-5">
+          <mxGeometry x="30" y="57.5" width="200" height="166" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-17" value="&lt;ul&gt;&lt;li style=&quot;border-color: var(--border-color);&quot;&gt;config_pipeline.json&lt;/li&gt;&lt;li&gt;pipeline_functions.py&lt;/li&gt;&lt;li&gt;pipeline_tutorial.ipynb&lt;/li&gt;&lt;li&gt;p# (custom pipeline APPs):&lt;/li&gt;&lt;ul&gt;&lt;li&gt;config_pipeline.json&lt;/li&gt;&lt;li&gt;p#_pipeline.py&lt;/li&gt;&lt;li&gt;p#_run.ipynb&lt;/li&gt;&lt;li&gt;README.md&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-16">
+          <mxGeometry x="-19" y="16" width="210" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-18" value="model" style="shape=folder;fontStyle=1;tabWidth=90;tabHeight=20;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;recursiveResize=0;strokeWidth=5;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-5">
+          <mxGeometry x="30" y="246" width="200" height="154" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-19" value="&lt;ul&gt;&lt;li&gt;config_traintest_pipe.py&lt;/li&gt;&lt;li&gt;models.py&lt;/li&gt;&lt;li&gt;traintest.py&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-18">
+          <mxGeometry x="-20" y="8" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-20" value="p#_pipeline" style="shape=folder;fontStyle=1;tabWidth=90;tabHeight=20;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;recursiveResize=0;strokeWidth=7;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-4">
+          <mxGeometry width="821" height="1420" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-21" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=4;dashed=1;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="141" y="150" width="490" height="518.94" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-22" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="237" y="188.94" width="170" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-23" value="&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="231" y="405.95" width="190" height="184.05" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="vaZw7ZPf9e5VCLAtTvDp-20" target="vaZw7ZPf9e5VCLAtTvDp-23">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="239.70000000000027" y="443.4499999999998" as="targetPoint" />
+            <mxPoint x="322" y="380" as="sourcePoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-25" value="preprocessing_dataset()" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="251" y="455.95" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-26" value="preprocessing_timeseries()" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="251" y="500.95" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-27" value="select_timeseries()" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="251" y="540.95" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-28" value="&lt;b&gt;Data preprocessing pipe&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;strokeColor=none;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="245" y="415.95" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-29" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=4;dashed=1;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="140" y="716" width="510" height="294" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-30" value="&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="224" y="756" width="209" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-31" value="select_models()" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="235" y="806" width="188" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-32" value="traintest_timeseries()" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="235" y="846" width="188" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-33" value="select_metrics()" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="235" y="886" width="188" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-34" value="&lt;b&gt;Model Building &amp;amp; Training pipe&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;strokeColor=none;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="239" y="766" width="186" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-35" value="calculatemetrics_timeseries()" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="235" y="926" width="188" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="vaZw7ZPf9e5VCLAtTvDp-20" source="vaZw7ZPf9e5VCLAtTvDp-29" target="vaZw7ZPf9e5VCLAtTvDp-38">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="1020" as="sourcePoint" />
+            <mxPoint x="320" y="1051" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-37" value="&lt;i&gt;&lt;u&gt;Pipeline of Training and Modeling&lt;/u&gt;&lt;/i&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="224" y="716" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-38" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=4;dashed=1;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="140" y="1051" width="510" height="204" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-39" value="&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="251" y="1098" width="160" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-40" value="report()" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="266" y="1154" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-41" value="&lt;b&gt;Postprocessing&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;strokeColor=none;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="266" y="1105" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-42" value="&lt;i&gt;&lt;u&gt;Visualization&lt;/u&gt;&lt;/i&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="288.5" y="1061" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="vaZw7ZPf9e5VCLAtTvDp-20" target="vaZw7ZPf9e5VCLAtTvDp-37">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="386" y="670" />
+              <mxPoint x="382" y="670" />
+            </Array>
+            <mxPoint x="386" y="670" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-44" value="&lt;i&gt;&lt;u&gt;Pipeline of Data Engineering&lt;/u&gt;&lt;/i&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="237" y="149.99999999999994" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-45" value="&lt;b&gt;Data ingestion pipe&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;strokeColor=none;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="257" y="198.93999999999994" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-46" value="configurations()" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="257" y="238.93999999999994" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-47" value="load()" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="257" y="278.93999999999994" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-48" value="convert_to_pyspark()" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="257" y="318.93999999999994" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-49" value="Raw Data" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="287" y="39.99999999999994" width="70" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="vaZw7ZPf9e5VCLAtTvDp-20" source="vaZw7ZPf9e5VCLAtTvDp-49" target="vaZw7ZPf9e5VCLAtTvDp-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-51" value="&lt;ul style=&quot;border-color: var(--border-color); color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;li style=&quot;border-color: var(--border-color);&quot;&gt;config_pipeline.json&lt;/li&gt;&lt;li style=&quot;border-color: var(--border-color);&quot;&gt;config_dataset.json&lt;/li&gt;&lt;li&gt;datasets.py&lt;/li&gt;&lt;/ul&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="421" y="228.94000000000005" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-52" value="&lt;ul&gt;&lt;li&gt;config_transform_pipe.py&lt;/li&gt;&lt;li&gt;transform.py&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="421" y="445.95000000000005" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-53" value="&lt;ul&gt;&lt;li&gt;config_traintest_pipe.py&lt;/li&gt;&lt;li&gt;models.py&lt;/li&gt;&lt;li&gt;traintest.py&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="441" y="806" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-54" value="&lt;ul&gt;&lt;li&gt;config_metrics_pipe.py&lt;/li&gt;&lt;li&gt;metrics.py&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="441" y="895" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-55" value="&lt;ul&gt;&lt;li&gt;reports.py&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="433" y="1144" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-56" value="&lt;ul&gt;&lt;li&gt;pipeline_functions.py (pipeline library)&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry x="-16" y="20" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="vaZw7ZPf9e5VCLAtTvDp-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=0;exitDy=378.5;exitPerimeter=0;entryX=0.998;entryY=0.302;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;strokeWidth=5;" edge="1" parent="vaZw7ZPf9e5VCLAtTvDp-4" target="vaZw7ZPf9e5VCLAtTvDp-20">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="930" y="428" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
