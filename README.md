@@ -1,4 +1,4 @@
-© 2021 nmc-costa. All Rights Reserved. “simplifyhit”™ is a trademark of nmc-costa.
+© 2021 nmc-costa. All Rights Reserved. simplifyhit™ is a trademark of nmc-costa.
 
 
 # 🚀 HIcode: Halfway Integration for Seamless Code Management and Collaboration
