@@ -70,23 +70,19 @@ Connect with fellow data science and engineering enthusiasts, and be part of the
 
 ## Sponsorship
 
-Currently being tested in large projects.
+We value the support of our community in advancing simple human interface technologies. If you believe in the mission of simplifyhit™ and would like to contribute to its development and maintenance, consider becoming a sponsor or contact us for custom services. Your support enables us to enhance the codebase, expand our resources, and provide ongoing support to the community. 
 
-We value the support of our community in advancing collaborative data science and engineering. If you believe in the mission of HIcode and would like to contribute to its development and maintenance, consider becoming a sponsor os contact us for custom services. Your support enables us to enhance the codebase, expand our resources, and provide ongoing support to the community.
+- **Contact Services**: For custom simplifyhit™ in your business, [linkedin](linkedin.com/in/nuno-m-c-da-costa-a14a4349).
 
-- **Contact Services**: For custom HIcode in your business, [linkedin](linkedin.com/in/nuno-m-c-da-costa-a14a4349).
+- **GitHub Sponsors**: Support simplifyhit™ projects through GitHub Sponsors and help us maintain its quality and accessibility. Visit our [GitHub Sponsors](https://github.com/sponsors/simplifyhit) page to explore sponsorship options. 
 
-<!--
-- **Patreon**: Show your commitment by becoming a patron on [Patreon](https://www.patreon.com/hicode). *TODO*
+- **Patreon**: Show your commitment by becoming a patron on [Patreon](https://www.patreon.com/simplifyhit).
 
-- **Open Collective**: Contribute to HIcode's sustainability by sponsoring us on [Open Collective](https://opencollective.com/hicode). Your donations help us cover project-related expenses and support ongoing improvements.*TODO*
+- **Open Collective**: Contribute to simplifyhit™ sustainability by sponsoring us on [Open Collective](https://opencollective.com/simplifyhit). Your donations help us cover project-related expenses and support ongoing improvements.
 
-- **GitHub Sponsors**: Support the HIcode project through GitHub Sponsors and help us maintain its quality and accessibility. Visit our [GitHub Sponsors](https://github.com/sponsors/hicode) page to explore sponsorship options. *TODO*
-)
--->
-Your sponsorship not only assists in driving the development of HIcode but also ensures its availability as a free and open-source resource for the wider community. We are immensely grateful for your support!
 
-*Please note: HIcode is committed to transparency and accountability. All sponsorship funds are used responsibly to enhance the project and its associated community resources.*
+
+Your sponsorship not only assists in driving the development of simplifyhit™ projects but also ensures their availability as free and open-source resources for the wider community. We are immensely grateful for your support!
 
 ## License
 
